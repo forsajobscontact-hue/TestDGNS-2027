@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f4c9a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="مسار المباريات">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>التحضير لمباراة الأمن الوطني | مسار المباريات</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -752,5 +759,6 @@ document.onkeydown=e=>{const k=+e.key;if(k>=1&&k<=3&&!$("s2").hidden&&!lock){con
 function chips(){const c=$("chips"),CT=[...new Set(Q.filter(qv).map(x=>x.c))];if(cat!=="الكل"&&!CT.includes(cat))cat="الكل";c.innerHTML="";["الكل",...CT].forEach(n=>{const b=document.createElement("button");b.className="chip"+(n===cat?" on":"");b.textContent=tx(n);b.onclick=()=>{cat=n;chips()};c.append(b)})}
 $("y").textContent=new Date().getFullYear();$("qn").textContent=Q.length;init();chips();bestUpd();ads();let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(ads,300)});
 </script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
 </body>
 </html>
